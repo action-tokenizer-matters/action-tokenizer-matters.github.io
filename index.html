@@ -3,43 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation">
-  <meta name="keywords" content="visual navigation,embodied AI,human dynamics model, deep reinforcement learning">
+        content="Action Tokenizer Matters in In-Context Imitation Learning">
+  <meta name="keywords" content="in-context learning, imitation learning, action tokenizer, robotics, LLMs">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:image" content="./static/images/habicrowd.png"/>
-  <link rel="image_src" href="./static/images/habicrowd.png">
+  <meta property="og:image" content="./static/images/tokenizer_paper.png"/>
+  <link rel="image_src" href="./static/images/tokenizer_paper.png">
   <link rel="icon"
         type="image/x-icon"
-        href="./static/images/habicrowd.ico"/>
+        href="./static/images/tokenizer.ico"/>
 
-  <title>HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation</title>
+  <title>Action Tokenizer Matters in In-Context Imitation Learning</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EDF010G6PN');
-
-
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
   </script>
-
-  <script type="module"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
-
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
@@ -63,189 +51,74 @@
   </div>
 </nav>
 
-
 <section class="hero">
   <div class="hero-body">
-    <div class="container">
-      <div class="container has-text-centered">
-        <h1 class="title is-1 publication-title">
-          HabiCrowd: A High Performance Simulator for Crowd-Aware Visual Navigation
-        </h1>
-        
-        <div class="column is-full_width">
-          <h2 class="title is-4">IROS 2024</h2>
-        </div>
-        <!-- <br> -->
-        <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ&hl=en&oi=ao">An Dinh Vuong</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=PhqGEY8AAAAJ&hl=en&oi=sra">Toan Nguyen</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span class="author-block">
-            <a href="https://scholar.google.com/citations?hl=th&user=qyExc4QAAAAJ&view_op=list_works">Minh Nhat Vu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <br>
-          <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=unbPvWAAAAAJ&hl=zh-CN">Baoru Huang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-          <span class="author-block">
-            <a href="https://scholar.google.com/citations?hl=en&user=vJYe5lkAAAAJ">Binh Huynh</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-          <span class="author-block">
-            <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ&hl=vi">Thieu Vo</a><sup>5</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-          <span class="author-block">
-            <a href="https://www.csc.liv.ac.uk/~anguyen/">Anh Nguyen</a><sup>6</sup>
-          </span>
-        </div>
-        <br>
-        <div class="is-size-5 publication-authors">
-          <span class="author-block"><sup>1</sup>FPT Software AI Center</span>&nbsp;&nbsp;
-          <span class="author-block"><sup>2</sup>ACIN - TU Wien</span>&nbsp;&nbsp;
-          <span class="author-block"><sup>3</sup>Imperial College London</span>&nbsp;&nbsp;<br>
-          <span class="author-block"><sup>4</sup>HUST</span>&nbsp;&nbsp;
-          <span class="author-block"><sup>5</sup>Ton Duc Thang University</span>&nbsp;&nbsp;
-          <span class="author-block"><sup>6</sup>University of Liverpool</span>
-        </div>
-        
-        <div class="column has-text-centered">
-          <div class="publication-links">
-            <span class="link-block">
-                <a href="https://ieeexplore.ieee.org/document/10801823" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-            <span class="link-block">
-                <a href="https://arxiv.org/abs/2306.11377" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-            </span>
-            <span class="link-block">
-              <a href="https://github.com/habicrowd/HabiCrowd"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
-                </span>
-                <span>Code</span>
-                </a>
-            </span>
-            <!-- Dataset Link. -->
-            <span class="link-block">
-              <a href="https://github.com/habicrowd/HabiCrowd/tree/main/dataset"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="far fa-images"></i>
-                </span>
-                <span>Data</span>
-                </a>
-              </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title">
+        Action Tokenizer Matters in In-Context Imitation Learning
+      </h1>
 
-<section class="hero teaser">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div id="wrapper"> 
-        <video id="teaser_4" autoplay controls muted loop playsinline width="32%" height="100%"> 
-            <source type="video/mp4" src="static/images/scene_1.mp4" /> 
-        </video>
-        <video id="teaser_2" autoplay controls muted loop playsinline width="32%" height="100%"> 
-          <source type="video/mp4" src="static/images/scene_3.mp4" /> 
-        </video>
-        <video id="teaser_3" autoplay controls muted loop playsinline width="32%" height="100%"> 
-            <source type="video/mp4" src="static/images/scene_2.mp4" /> 
-        </video>
-        <div class="clear"></div> 
+      <div class="column is-full_width">
+        <h2 class="title is-4">IROS 2025</h2>
       </div>
-      <h2 class="subtitle has-text-centered">
-        <i>HabiCrowd</i>, a new dataset and benchmark for crowd-aware visual navigation that surpasses other benchmarks in terms of human diversity and computational utilization.
-      </h2>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=CUpnG-YAAAAJ&hl=en">An Dinh Vuong</a><sup>1</sup>
+        </span>&nbsp;&nbsp;&nbsp;
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?hl=th&user=qyExc4QAAAAJ">Minh Nhat Vu</a><sup>2</sup>
+        </span>&nbsp;&nbsp;&nbsp;
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=XXYYZZAAAAJ&hl=en">Dong An</a><sup>1</sup>
+        </span>&nbsp;&nbsp;&nbsp;
+        <span class="author-block">
+          <a href="https://www.adelaide.edu.au/directory/ian.reid">Ian Reid</a><sup>2</sup>
+        </span>
+      </div>
+
+      <br>
+      <div class="is-size-5 publication-authors">
+        <span class="author-block"><sup>1</sup>MBZUAI</span>&nbsp;&nbsp;
+        <span class="author-block"><sup>2</sup>University of Adelaide</span>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2503.01206" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/action-tokenizer/actok" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Visual navigation, a foundational aspect of Embodied AI (E-AI), has been
-            significantly studied in the past few years. While many 3D simulators have
-            been introduced to support visual navigation tasks, scarcely works have
-            been directed towards combining human dynamics, creating the gap between
-            simulation and real-world applications. Furthermore, current 3D simulators
-            incorporating human dynamics have several limitations, particularly in
-            terms of computational efficiency, which is a promise of E-AI simulators.
-            To overcome these shortcomings, we introduce HabiCrowd, the first standard
-            benchmark for crowd-aware visual navigation that integrates a crowd
-            dynamics model with diverse human settings into photorealistic environments. Empirical evaluations demonstrate that our proposed human dynamics model achieves state-of-the-art performance in collision avoidance, while exhibiting superior computational efficiency compared to its counterparts. We leverage HabiCrowd to conduct several comprehensive studies on crowd-aware visual navigation tasks and human-robot interactions.
+            In-context imitation learning has recently emerged as a promising paradigm for decision-making by conditioning large models on demonstration sequences. However, we show that the choice of action representation — the “action tokenizer” — significantly influences performance across multiple tasks. In this paper, we systematically analyze how different tokenization schemes affect the in-context learning ability of transformer-based policies. We propose an improved action tokenizer that incorporates kinematic priors and demonstrate its superiority in robotic manipulation tasks, outperforming baselines in both data efficiency and generalization.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-
-<section class="hero teaser">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Key Contributions</h2>
-      </div>
-    </div>
-    <div class="container is-max-desktop">
-      <div class="content has-text-justified">
-        <p>
-          <i>UPL++</i>, our proposed human dynamics model achieve collision-free, while
-        significantly outperforms computational time of state-of-the-art human dynamics
-        model of iGibson-SN (ORCA).
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <img style="width: 80%;" src="./static/images/comparison.svg" alt="Comparison with related human dynamics model."/>
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          Furthermore, our simulator shows remarkable computational utilization over related benchmarks.
-          The rendering speed is approximately two times faster than Isaac Sim, approximately three times faster than iGibson-SN
-          while RAM utilizations is approximately six times smaller than Isaac Sim. We also achieve wider
-          range of human diversity. More information can be found in our paper.
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <img style="width: 80%;" src="./static/images/simulator.svg"
-                  alt="Comparison with related benchmarks."/>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <video id="teaser" autoplay controls muted loop playsinline width="50%" height="100%">
-          <source src="./static/images/upl++.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
-      <div class="content has-text-centered">
-        <p>
-          An example of our human dynamics UPL++ projected on 2D floor plan.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -253,25 +126,20 @@
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Crowd-aware Visual Navigation</h2>
+        <h2 class="title is-3">Highlights</h2>
       </div>
     </div>
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <video id="teaser" autoplay controls muted loop playsinline width="50%" height="100%">
-          <source src="./static/images/scene_0_promt.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
       <div class="content has-text-justified">
-        <p>
-          Utilizing HabiCrowd, we benchmark two tasks: point-goal and object-goal navigation.
-          We benchmark five state-of-the-art baselines on both crowd-aware navigation (robotics)
-          and egocentric-based (computer vision) literature.
-        </p>
+        <ul>
+          <li>We demonstrate that action tokenization is a critical factor in in-context imitation learning.</li>
+          <li>We propose a new tokenizer design that respects robot kinematics and continuous control smoothness.</li>
+          <li>Our approach improves generalization to unseen tasks and environments.</li>
+        </ul>
       </div>
-      <img style="width: 90%;" src="./static/images/benchmarking.svg"
-                 alt="Comparison with related human dynamics model."/>
+      <div class="columns is-centered has-text-centered">
+        <img style="width: 85%;" src="./static/images/tokenizer_comparison.svg" alt="Tokenizer comparison figure">
+      </div>
     </div>
   </div>
 </section>
@@ -279,7 +147,10 @@
 <section class="section" id="acknowledgements">
   <div class="container content is-max-desktop">
     <h2 class="title">Acknowledgements</h2>
-    <p>We borrow github page from <a href="https://hypernerf.github.io/">HyperNeRF</a>. Special thanks to them!
+    <p>
+      We thank our colleagues at MBZUAI and the University of Adelaide for helpful discussions.
+      This website template is adapted from <a href="https://hypernerf.github.io/">HyperNeRF</a>.
+    </p>
   </div>
 </section>
 
