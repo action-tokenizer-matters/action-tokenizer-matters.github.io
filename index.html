@@ -92,13 +92,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In-context imitation learning has recently emerged as a promising paradigm for decision-making by conditioning large models on demonstration sequences. However, we show that the choice of action representation — the “action tokenizer” — significantly influences performance across multiple tasks. In this paper, we systematically analyze how different tokenization schemes affect the in-context learning ability of transformer-based policies. We propose an improved action tokenizer that incorporates kinematic priors and demonstrate its superiority in robotic manipulation tasks, outperforming baselines in both data efficiency and generalization.
+            In-context imitation learning (ICIL) is a new paradigm that enables robots to generalize from demonstrations to unseen tasks without retraining. A well-structured action representation is the key to capturing demonstration information effectively, yet action tokenizer (the process of discretizing and encoding actions) remains largely unexplored in ICIL. In this work, we first systematically evaluate existing action tokenizer methods in ICIL and reveal a critical limitation: while they effectively encode action trajectories, they fail to preserve temporal smoothness, which is crucial for stable robotic execution. To address this, we propose LipVQ-VAE, a variational autoencoder that enforces the Lipschitz condition in the latent action space via weight normalization. By propagating smoothness constraints from raw action inputs to a quantized latent codebook, LipVQ-VAE generates more stable and smoother actions. When integrating into ICIL, LipVQ-VAE improves performance by more than 5.3% in high-fidelity simulators, with real-world experiments confirming its ability to produce smoother, more reliable trajectories.
           </p>
         </div>
       </div>
     </div>
+
+    <!-- Teaser video -->
+    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <video autoplay muted loop controls playsinline style="width: 100%; border-radius: 12px;">
+          <source src="./static/Teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="has-text-centered" style="margin-top: 1rem;">
+          <i>Teaser: Smooth, stable trajectories from LipVQ-VAE in high-fidelity simulators.</i>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section class="section" id="acknowledgements">
   <div class="container content is-max-desktop">
